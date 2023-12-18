@@ -1,32 +1,7 @@
-
-def basic_operations(a, b):
-    results = {} 
-    try:
-        results["addition"] = a + b 
-        results["subtraction"] = a - b
-        results["multiplication"] = a * b 
-        results["division"] = a / b 
-    except ZeroDivisionError: 
-        results["division"] = "undefined" 
-    except TypeError: 
-        results["addition"] = "invalid" 
-        results["subtraction"] = "invalid" 
-        results["multiplication"] = "invalid" 
-        results["division"] = "invalid" 
-def power_operation(base, exponent, **kwargs):
-    try: 
-        result = base ** exponent 
-        if "modulo" in kwargs:
-            modulo = kwargs["modulo"] 
-            result = result % modulo 
-    except TypeError:
-        result = "invalid" 
-    return result
-def apply_operations(operation_list):
-    results = [] 
-    for operation in operation_list: 
-        function = operation[0] 
-        args = operation[1] 
-        result = function(*args) 
-        results.append(result) 
-    return results 
+class Car:
+    def __init__(self, make, model, year):
+        self.make = make
+        self.model = model
+        self.year = year
+    def display_info(self):
+        print(f"This car is a {self.year} {self.make} {self.model}.")
